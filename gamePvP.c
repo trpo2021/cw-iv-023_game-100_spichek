@@ -3,14 +3,11 @@
 
 int gamePVP(char *player_one, char *player_two) {
   PVP_out();
-  //почему-то не работает первый ввод имени
-  printf("Псевдоним второго игрока(не более 15 символов): ");
-  fgets(player_one, 16, stdin);
-  puts(player_one);
-  printf("\n");
   printf("Псевдоним первого игрока(не более 15 символов): ");
-  fgets(player_two, 16, stdin);
-  puts(player_two);
+  scanf("%s", player_one);
+  printf("Псевдоним второго игрока(не более 15 символов): ");
+  scanf("%s", player_two);
+  printf("\n");
   int input = 0, stick = 100;
   int num[3];
   num[0] = input;

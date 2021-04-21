@@ -20,13 +20,22 @@ int main() {
   if (answer == 1) {
     winner = gamePVP(player_one, player_two);
     if (winner == 1) {
+      system("cls");
       printf("победил игрок ");
       puts(player_one);
     }
     if (winner == 2) {
+      system("cls");
       printf("победил игрок ");
       puts(player_two);
     }
+    printf("хотите сыграть ещё раз?\n");
+    printf("1 - да, вернуться в меню.\n2 = нет, выйти из игры.\n");
+    scanf("%d", &answer);
+    if (answer == 1)
+      return main();
+    if (answer == 2)
+      return 0;
   }
   if (answer == 3)
     return main();
