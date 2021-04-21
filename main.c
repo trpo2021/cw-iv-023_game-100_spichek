@@ -21,16 +21,16 @@ int main() {
     winner = gamePVP(player_one, player_two);
     if (winner == 1) {
       system("cls");
-      printf("победил игрок ");
+      printf("The player won ");
       puts(player_one);
     }
     if (winner == 2) {
       system("cls");
-      printf("победил игрок ");
+      printf("The player won ");
       puts(player_two);
     }
-    printf("хотите сыграть ещё раз?\n");
-    printf("1 - да, вернуться в меню.\n2 = нет, выйти из игры.\n");
+    printf("Do you want to play again?\n");
+    printf("1 - yes, go back to the menu.\n2 - no, quit the game.\n");
     scanf("%d", &answer);
     if (answer == 1)
       return main();
@@ -40,7 +40,7 @@ int main() {
   if (answer == 3)
     return main();
   if (answer == 2)
-    winner = gamePVE(player_one);
+    winner = gamePVE(player_one, player_two);
 
   system("pause");
 }

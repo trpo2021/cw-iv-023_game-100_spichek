@@ -2,10 +2,10 @@
 #include "out.h"
 
 int gamePVP(char *player_one, char *player_two) {
-  PVP_out();
-  printf("Псевдоним первого игрока(не более 15 символов): ");
+  nickname_out();
+  printf("Nickname of the first player(no more than 15 characters): ");
   scanf("%s", player_one);
-  printf("Псевдоним второго игрока(не более 15 символов): ");
+  printf("Nickname of the second player(no more than 15 characters): ");
   scanf("%s", player_two);
   printf("\n");
   int input = 0, stick = 100;
@@ -21,23 +21,23 @@ int gamePVP(char *player_one, char *player_two) {
 int maingame(int *num) {
   int choise = 0;
   while (num[0] != 100) {
-    stick(num[1]);
+    game(num[1]);
     printf("\n\n");
 
-    printf("игрок №1, введите число: ");
+    printf("Player #1, enter the number: ");
     scanf("%d", &choise);
     if (choise > num[1]) {
-      printf("\nспичек слишком мало, попробуйте ещё раз");
+      printf("\nThere are too few matches, try again");
       choise = 100;
     }
 
     while (choise < 1 || choise > 10) {
       choise = 0;
-      printf("\nчисло должно быть не меньше 1, и не больше 10");
-      printf("\nигрок №1, введите число: ");
+      printf("\nThe number must be at least 1, and not more than 10");
+      printf("\nPlayer #1, enter the number: ");
       scanf("%d", &choise);
       if (choise > num[1]) {
-        printf("\nспичек слишком мало, попробуйте ещё раз");
+        printf("\nThere are too few matches, try again");
         choise = 100;
       }
     }
@@ -45,23 +45,23 @@ int maingame(int *num) {
     *(num + 1) -= choise;
     num[2] = 2;
 
-    stick(num[1]);
+    game(num[1]);
     printf("\n\n");
-    printf("игрок №2, введите число: ");
+    printf("Player #2, enter the number: ");
     scanf("%d", &choise);
 
     if (choise > num[1]) {
-      printf("\nспичек слишком мало, попробуйте ещё раз");
+      printf("\nThere are too few matches, try again");
       choise = 100;
     }
 
     while (choise < 1 || choise > 10) {
       choise = 0;
-      printf("\nчисло должно быть не меньше 1, и не больше 10");
-      printf("\nигрок №2, введите число: ");
+      printf("\nThe number must be at least 1, and not more than 10");
+      printf("\nPlayer #2, enter the number: ");
       scanf("%d", &choise);
       if (choise > num[1]) {
-        printf("\nспичек слишком мало, попробуйте ещё раз");
+        printf("\nThere are too few matches, try again");
         choise = 100;
       }
     }
