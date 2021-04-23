@@ -5,7 +5,7 @@
 
 #pragma once
 
-int gamePVE(char *, char *);
+int gamePVE(char *);
 int bot_easy(int *);
 int bot_medium(int *);
 int bot_hard(int *);

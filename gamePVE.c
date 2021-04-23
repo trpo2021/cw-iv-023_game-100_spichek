@@ -1,11 +1,11 @@
 #include "gamePVE.h"
 #include "out.h"
 
-int gamePVE(char *player_one, char *player_two) {
+int gamePVE(char *player_one) {
   nickname_out(player_one);
   printf("Player's nickname(no more than 15 characters): ");
   scanf("%s", player_one);
-  void choise_dif();
+  choise_dif();
   int choise;
   printf("1 - easy. 2-medium. 3-hard.\n");
   scanf("%d", &choise);
@@ -51,12 +51,15 @@ int bot_easy(int *num) {
     *(num + 1) -= choise;
     num[2] = 2;
 
-    game(num[1]);
-    printf("\n\n");
-    choise = rand() % 10 + 1;
-    *num += choise;
-    *(num + 1) -= choise;
-    num[2] = 1;
+    if (num[1] != 0) {
+      if (num[1] < 10)
+        choise = num[1];
+      else
+        choise = rand() % 10 + 1;
+      *num += choise;
+      *(num + 1) -= choise;
+      num[2] = 1;
+    }
   }
   int winner = num[2];
   return winner;

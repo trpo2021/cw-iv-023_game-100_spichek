@@ -20,14 +20,12 @@ int main() {
   if (answer == 1) {
     winner = gamePVP(player_one, player_two);
     if (winner == 1) {
-      system("cls");
-      printf("The player won ");
-      puts(player_one);
+      win();
+      printf("The player %s won!", player_one);
     }
     if (winner == 2) {
-      system("cls");
-      printf("The player won ");
-      puts(player_two);
+      win();
+      printf("The player %s won!", player_two);
     }
     printf("Do you want to play again?\n");
     printf("1 - yes, go back to the menu.\n2 - no, quit the game.\n");
@@ -39,8 +37,24 @@ int main() {
   }
   if (answer == 3)
     return main();
-  if (answer == 2)
-    winner = gamePVE(player_one, player_two);
-
-  system("pause");
+  if (answer == 2) {
+    winner = gamePVE(player_one);
+    if (winner == 1) {
+      win();
+      printf("Player %s win!\n", player_one);
+    }
+    if (winner == 2) {
+      win();
+      srand(time(NULL));
+      int bot = rand() % 100 + 1;
+      printf("BOT_%d win!\n", bot);
+    }
+    printf("Do you want to play again?\n");
+    printf("1 - yes, go back to the menu.\n2 - no, quit the game.\n");
+    scanf("%d", &answer);
+    if (answer == 1)
+      return main();
+    if (answer == 2)
+      return 0;
+  }
 }

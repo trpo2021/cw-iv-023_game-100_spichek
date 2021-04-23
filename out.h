@@ -9,3 +9,4 @@ int start_game_out();
 void game(int);
 void nickname_out();
 void choise_dif();
+void win();
