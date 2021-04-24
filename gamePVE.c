@@ -52,7 +52,7 @@ int bot_easy(int *num) {
     num[2] = 2;
 
     if (num[1] != 0) {
-      if (num[1] < 10)
+      if (num[1] <= 10)
         choise = num[1];
       else
         choise = rand() % 10 + 1;
@@ -93,7 +93,7 @@ int bot_medium(int *num) {
     num[2] = 2;
 
     if (num[1] != 0) {
-      if (num[1] < 10)
+      if (num[1] <= 10)
         choise = num[1] - 1;
       if (num[1] == 1)
         choise = 1;
@@ -136,7 +136,7 @@ int bot_hard(int *num) {
     num[2] = 2;
 
     if (num[1] != 0) {
-      if (num[1] < 10)
+      if (num[1] <= 10)
         choise = num[1] - 1;
       if (num[1] == 1)
         choise = 1;
