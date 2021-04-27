@@ -1,6 +1,8 @@
 #include "gamePVE.h"
 #include "out.h"
 
+int player_input(int *);
+
 int gamePVE(char *player_one) {
   int i = 1;
   nickname_out(player_one, i);
@@ -25,23 +27,7 @@ int bot_easy(int *num) {
   int choise = 0;
   while (num[0] != 0) {
     game(num[0]);
-    printf("Player, enter the number: ");
-    scanf("%d", &choise);
-    if (choise > num[0]) {
-      printf("\nThere are too few matches, try again");
-      choise = 100;
-    }
-
-    while (choise < 1 || choise > 10) {
-      choise = 0;
-      printf("\nThe number must be at least 1, and not more than 10");
-      printf("\nPlayer, enter the number: ");
-      scanf("%d", &choise);
-      if (choise > num[0]) {
-        printf("\nThere are too few matches, try again");
-        choise = 100;
-      }
-    }
+    choise = player_input(num);
     *num -= choise;
     num[1] = 2;
 
@@ -63,23 +49,7 @@ int bot_medium(int *num) {
   int choise = 0;
   while (num[0] != 0) {
     game(num[0]);
-    printf("Player, enter the number: ");
-    scanf("%d", &choise);
-    if (choise > num[0]) {
-      printf("\nThere are too few matches, try again");
-      choise = 100;
-    }
-
-    while (choise < 1 || choise > 10) {
-      choise = 0;
-      printf("\nThe number must be at least 1, and not more than 10");
-      printf("\nPlayer, enter the number: ");
-      scanf("%d", &choise);
-      if (choise > num[0]) {
-        printf("\nThere are too few matches, try again");
-        choise = 100;
-      }
-    }
+    choise = player_input(num);
     *num -= choise;
     num[1] = 2;
 
@@ -104,23 +74,7 @@ int bot_hard(int *num) {
   int choise = 0;
   while (num[0] != 0) {
     game(num[0]);
-    printf("Player, enter the number: ");
-    scanf("%d", &choise);
-    if (choise > num[0]) {
-      printf("\nThere are too few matches, try again");
-      choise = 100;
-    }
-
-    while (choise < 1 || choise > 10) {
-      choise = 0;
-      printf("\nThe number must be at least 1, and not more than 10");
-      printf("\nPlayer, enter the number: ");
-      scanf("%d", &choise);
-      if (choise > num[0]) {
-        printf("\nThere are too few matches, try again");
-        choise = 100;
-      }
-    }
+    choise = player_input(num);
     *num -= choise;
     num[1] = 2;
 
@@ -136,4 +90,27 @@ int bot_hard(int *num) {
   }
   int winner = num[1];
   return winner;
+}
+
+int player_input(int *num) {
+  int choise;
+  game(num[0]);
+  printf("Player, enter the number: ");
+  scanf("%d", &choise);
+  if (choise > num[0]) {
+    printf("\nThere are too few matches, try again");
+    choise = 100;
+  }
+
+  while (choise < 1 || choise > 10) {
+    choise = 0;
+    printf("\nThe number must be at least 1, and not more than 10");
+    printf("\nPlayer, enter the number: ");
+    scanf("%d", &choise);
+    if (choise > num[0]) {
+      printf("\nThere are too few matches, try again");
+      choise = 100;
+    }
+  }
+  return choise;
 }
