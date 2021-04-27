@@ -31,7 +31,7 @@ int rules_page() {
   printf("*100 matches are laid out in a row on the table. Each player*\n");
   printf("*can take from 1 to 10 matches in their turn. The moves are *\n");
   printf("*executed in turn. The participant who took the last match  *\n");
-  printf("*(or matches) loses.                                        *\n");
+  printf("*(or matches) loses. The first move is made by the player #1*\n");
   printf("*|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||*\n");
   printf("*************************************************************\n");
   printf("Back - enter 1\n");
@@ -73,18 +73,32 @@ void game(int flag) {
   printf("*************************************************************\n");
   printf("\n\n");
   printf("%d matches left\n", flag);
+  printf("\n\n");
 }
 
-void nickname_out() {
+void nickname_out(char *player_name, int i) {
   system("cls");
   printf("*************************************************************\n");
   printf("*|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||*\n");
   printf("*||||||||||||||||||||||ENTER YOUR ALIAS|||||||||||||||||||||*\n");
   printf("*|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||*\n");
   printf("*************************************************************\n");
+  if (i == 1) {
+    printf("Player's nickname(no more than 15 characters): ");
+    scanf("%s", player_name);
+  }
+  if (i == 2) {
+    printf("Nickname of the first player(no more than 15 characters): ");
+    scanf("%s", player_name);
+  }
+  if (i == 3) {
+    printf("Nickname of the second player(no more than 15 characters): ");
+    scanf("%s", player_name);
+  }
+  printf("\n");
 }
 
-void choise_dif() {
+int choise_dif() {
   system("cls");
   printf("*************************************************************\n");
   printf("*|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||*\n");
@@ -92,6 +106,10 @@ void choise_dif() {
   printf("*|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||*\n");
   printf("*************************************************************\n");
   printf("\n\n");
+  printf("1 - easy. 2-medium. 3-hard.\n");
+  int choise;
+  scanf("%d", &choise);
+  return choise;
 }
 
 void win() {
