@@ -60,7 +60,6 @@ int bot_medium(int *num) {
         choise = 1;
       else
         choise = rand() % 10 + 1;
-
       *num -= choise;
       num[1] = 1;
     }
@@ -83,7 +82,6 @@ int bot_hard(int *num) {
         choise = num[0] - 1;
       if (num[0] == 1)
         choise = 1;
-
       *num -= choise;
       num[1] = 1;
     }

@@ -25,7 +25,6 @@ int maingame(int *num) {
       printf("\nThere are too few matches, try again");
       choise = 100;
     }
-
     while (choise < 1 || choise > 10) {
       choise = 0;
       printf("\nThe number must be at least 1, and not more than 10");
@@ -46,7 +45,6 @@ int maingame(int *num) {
       printf("\nThere are too few matches, try again");
       choise = 100;
     }
-
     while (choise < 1 || choise > 10) {
       choise = 0;
       printf("\nThe number must be at least 1, and not more than 10");

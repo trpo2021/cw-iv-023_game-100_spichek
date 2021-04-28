@@ -113,6 +113,7 @@ int choise_dif() {
   printf("*************************************************************\n");
   printf("\n");
   printf("1 - easy. 2-medium. 3-hard.\n");
+
   int choise;
   scanf("%d", &choise);
   return choise;
