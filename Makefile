@@ -12,3 +12,6 @@ out.o: out.c
 
 main.o: main.c
 	gcc -c main.c
+
+clean:
+	rm -rf *.o game
