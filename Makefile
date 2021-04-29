@@ -1,17 +1,15 @@
-game: main.o gamePVP.o out.o gamePVE.o
+all: main game menu
 	gcc main.o gamePVP.o out.o gamePVE.o -lm -o  game.exe
 
-gamePVE.o: gamePVE.c
-	gcc -c gamePVE.c
+main:
+	gcc -c src/main/main.c
 
-gamePVP.o: gamePVP.c
-	gcc -c gamePVP.c
+game:
+	gcc -c src/game/gamePVE.c
+	gcc -c src/game/gamePVP.c
 
-out.o: out.c
-	gcc -c out.c
-
-main.o: main.c
-	gcc -c main.c
+menu:
+	gcc -c src/menu/out.c
 
 clean:
-	rm -rf *.o game
+	rm -rf *.o all
