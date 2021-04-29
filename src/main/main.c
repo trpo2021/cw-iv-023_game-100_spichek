@@ -1,6 +1,6 @@
-#include "gamePVE.h"
-#include "gamePVP.h"
-#include "out.h"
+#include "../game/gamePVE.h"
+#include "../game/gamePVP.h"
+#include "../menu/out.h"
 #include <stdio.h>
 #include <stdlib.h>
 

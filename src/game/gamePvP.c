@@ -1,5 +1,5 @@
 #include "gamePVP.h"
-#include "out.h"
+#include "../menu/out.h"
 
 int gamePVP(char *player_one, char *player_two) {
   int i = 2;
