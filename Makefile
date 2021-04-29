@@ -1,5 +1,5 @@
 all: main game menu
-	gcc main.o gamePVP.o out.o gamePVE.o -lm -o  game.exe
+	gcc -Wall -Wextra -Werror main.o gamePVP.o out.o gamePVE.o -lm -o game.exe
 
 main:
 	gcc -c src/main/main.c
