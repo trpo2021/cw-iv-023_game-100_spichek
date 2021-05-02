@@ -86,6 +86,8 @@ int bot_hard(int* num)
                 choise = 1;
             if (num[0] < 100)
                 choise = 11 - choise;
+            if (num[0] <= 10)
+                choise = num[0] - 1;
 
             *num -= choise;
             num[1] = 1;
