@@ -1,5 +1,5 @@
 #include "gamePVE.h"
-#include "../menu/out.h"
+#include "menu/out.h"
 
 int player_input(int*);
 
