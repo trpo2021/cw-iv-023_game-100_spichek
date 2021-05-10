@@ -1,7 +1,7 @@
 CC = gcc
 AR = ar rc
 FLAG_EXE = -lm -o
-O_FLAG = -I src -c -MP -MMD
+O_FLAG = -Wall -Wextra -I src -c -MP -MMD
 BIN = bin/
 GAME_DIR = src/game/
 MAIN_DIR = src/main/
