@@ -1,8 +1,6 @@
 #include "gamePVE.h"
 #include "menu/out.h"
 
-int player_input(int*);
-
 int gamePVE(char* player_one)
 {
     int i = 1;
