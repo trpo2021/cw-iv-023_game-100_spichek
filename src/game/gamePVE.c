@@ -1,4 +1,5 @@
 #include "gamePVE.h"
+#include "menu/check.h"
 #include "menu/out.h"
 
 int gamePVE(char* player_one)
@@ -97,23 +98,19 @@ int bot_hard(int* num)
 
 int player_input(int* num)
 {
-    int choise;
+    int choise = 0;
     game(num[0]);
     printf("Player, enter the number: ");
-    scanf("%d", &choise);
-    if (choise > num[0]) {
-        printf("\nThere are too few matches, try again");
-        choise = 100;
-    }
-
-    while (choise < 1 || choise > 10) {
-        choise = 0;
-        printf("\nThe number must be at least 1, and not more than 10");
-        printf("\nPlayer, enter the number: ");
-        scanf("%d", &choise);
+    char input[1];
+    scanf("%s", &input);
+    choise = check_input(10, input);
+    while (choise == 0) {
+        printf("Player, enter the number: ");
+        scanf("%s", &input);
+        choise = check_input(10, input);
         if (choise > num[0]) {
             printf("\nThere are too few matches, try again");
-            choise = 100;
+            choise = 0;
         }
     }
     return choise;

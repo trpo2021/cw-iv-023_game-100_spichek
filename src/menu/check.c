@@ -36,7 +36,8 @@ int check_input(int max, char* input)
             return answer;
     }
     if (max == 10) {
-        if (answer > 10 || answer < 1) {
+        if (answer < 1 || answer > 10) {
+            printf("\nThe number must be at least 1, and not more than 10");
             return 0;
         } else
             return answer;
