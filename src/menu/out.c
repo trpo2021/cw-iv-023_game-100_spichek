@@ -14,11 +14,9 @@ int out_menu()
     printf("*|||||||||||||||||||||||||||||||||||||||||||||||||||||||||*\n");
     printf("***********************************************************\n");
     int answer = 0;
-    char input[1];
-    scanf("%s", &input);
-    answer = check_input(3, input);
+    char input[2];
     while (answer == 0) {
-        scanf("%s", &input);
+        fgets(input, 2, stdin);
         answer = check_input(3, input);
     }
     return answer;
@@ -44,10 +42,10 @@ int rules_page()
     printf("*|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||*\n");
     printf("*************************************************************\n");
     printf("Back - enter 1\n");
-    char input[1];
-    scanf("%s", &input);
+    char input[2];
+    fgets(input, 2, stdin);
     while (check_input(1, input) == 0)
-        scanf("%s", &input);
+        fgets(input, 2, stdin);
     return 0;
 }
 
@@ -64,11 +62,9 @@ int start_game_out()
     printf("1 - player vs player\n2 - player vs computer\n3 - go back to the "
            "menu\n");
     int answer = 0;
-    char input[1];
-    scanf("%s", &input);
-    answer = check_input(3, input);
+    char input[2];
     while (answer == 0) {
-        scanf("%s", &input);
+        fgets(input, 2, stdin);
         answer = check_input(3, input);
     }
     return answer;
@@ -121,11 +117,9 @@ int choise_dif()
     printf("\n");
     printf("1 - easy. 2-medium. 3-hard.\n");
     int answer = 0;
-    char input[1];
-    scanf("%s", &input);
-    answer = check_input(3, input);
+    char input[2];
     while (answer == 0) {
-        scanf("%s", &input);
+        fgets(input, 2, stdin);
         answer = check_input(3, input);
     }
     return answer;

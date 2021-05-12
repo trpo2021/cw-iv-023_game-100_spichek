@@ -100,14 +100,11 @@ int player_input(int* num)
 {
     int choise = 0;
     game(num[0]);
-    printf("Player, enter the number: ");
-    char input[1];
-    scanf("%s", &input);
-    choise = check_input(10, input);
+    char input[2];
     while (choise == 0) {
         printf("Player, enter the number: ");
-        scanf("%s", &input);
-        choise = check_input(10, input);
+        fgets(input, 2, stdin);
+        choise = check_input(3, input);
         if (choise > num[0]) {
             printf("\nThere are too few matches, try again");
             choise = 0;
