@@ -3,8 +3,11 @@
 int check_input(int max, char* input)
 {
     int answer;
+    char admin[] = "NN";
+    if (strcmp(admin, input) == 0)
+        return 0;
     if (atoi(input) == 0) {
-        printf("input error. try again.\n");
+        printf("please do not enter anything other than numbers.\n");
         return 0;
     }
     answer = atoi(input);
@@ -31,10 +34,12 @@ int check_input(int max, char* input)
     }
     if (max == 10) {
         if (answer < 1 || answer > 10) {
-            printf("\nThe number must be at least 1, and not more than 10");
+            printf("\nThe number must be at least 1, and not more than 10\n");
             return 0;
         } else
             return answer;
     }
     return 0;
 }
+
+// bool check_nick(char* nick)
