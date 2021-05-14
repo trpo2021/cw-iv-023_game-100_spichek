@@ -4,8 +4,7 @@
 
 int gamePVE(char* player_one)
 {
-    int i = 1;
-    nickname_out(player_one, i);
+    nickname_out(player_one, 1);
     int choise;
     choise = choise_dif();
     int num[3];
@@ -28,7 +27,7 @@ int bot_easy(int* num)
     int choise = 0;
     while (num[0] > 0) {
         game(num[0]);
-        choise = player_input(num);
+        choise = player_input_PVE(num);
         *num -= choise;
         num[1] = 2;
 
@@ -51,7 +50,7 @@ int bot_medium(int* num)
     int choise = 0;
     while (num[0] > 0) {
         game(num[0]);
-        choise = player_input(num);
+        choise = player_input_PVE(num);
         *num -= choise;
         num[1] = 2;
 
@@ -76,7 +75,7 @@ int bot_hard(int* num)
     int choise = 0;
     while (num[0] > 0) {
         game(num[0]);
-        choise = player_input(num);
+        choise = player_input_PVE(num);
         *num -= choise;
         num[1] = 2;
 
@@ -96,17 +95,17 @@ int bot_hard(int* num)
     return winner;
 }
 
-int player_input(int* num)
+int player_input_PVE(int* num)
 {
     int choise = 0;
     game(num[0]);
+    printf("Player, enter the number: \n");
     char input[2];
     while (choise == 0) {
-        printf("Player, enter the number: ");
-        fgets(input, 2, stdin);
-        choise = check_input(3, input);
+        fgets(input, 3, stdin);
+        choise = check_input(10, input);
         if (choise > num[0]) {
-            printf("\nThere are too few matches, try again");
+            printf("\nThere are too few matches, try again\n");
             choise = 0;
         }
     }
