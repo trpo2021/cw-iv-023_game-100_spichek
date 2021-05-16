@@ -42,4 +42,17 @@ int check_input(int max, char* input)
     return 0;
 }
 
-// bool check_nick(char* nick)
+bool check_nick(char* nick)
+{
+    int i = 0;
+    while (i != 15) {
+        if ((int)*(nick + i) == 0)
+            return true;
+        if (((int)*(nick + i) > 64 && (int)*(nick + i) < 91)
+            || ((int)*(nick + i) > 96 && (int)*(nick + i) < 123))
+            i++;
+        else
+            return false;
+    }
+    return true;
+}
