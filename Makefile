@@ -18,9 +18,10 @@ all: game test
 game: $(BIN)game.exe
 
 test: $(BIN)test.exe
+	$(BIN)test.exe
 
 $(BIN)test.exe: $(BIN)test.a
-	$(CC) $(BIN)test.a $(FLAG_EXE) $@
+	$(CC) $(TEST_OBJ)test_main.o $(TEST_OBJ)test.o $(MENU_OBJ)check.o $(FLAG_EXE) $@
 
 $(BIN)game.exe: $(BIN)game.a
 	$(CC) $(BIN)game.a $(FLAG_EXE) $@
