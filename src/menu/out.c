@@ -83,7 +83,7 @@ void game(int flag)
     printf("\n");
 }
 
-void nickname_out(char* player_name, int choise)
+int nickname_out(char* player_name, int choise)
 {
     system("cls");
     printf("*************************************************************\n");
@@ -91,19 +91,39 @@ void nickname_out(char* player_name, int choise)
     printf("*|||||||||||||||||||||ENTER YOUR NICKNAME|||||||||||||||||||*\n");
     printf("*|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||*\n");
     printf("*************************************************************\n");
+    char string[16];
     if (choise == 1) {
+        printf("use only latin symbol and don't use spaces\n");
         printf("Player's nickname(no more than 15 characters): ");
-        scanf("%s", player_name);
+        scanf("%s", string);
+        if (check_nick(string) == true) {
+            strcpy(player_name, string);
+            return 0;
+        } else
+            return nickname_out(player_name, 1);
     }
     if (choise == 2) {
+        printf("use only latin symbol and don't use spaces\n");
         printf("Nickname of the first player(no more than 15 characters): ");
-        scanf("%s", player_name);
+        scanf("%s", string);
+        if (check_nick(string) == true) {
+            strcpy(player_name, string);
+            return 0;
+        } else
+            return nickname_out(player_name, 2);
     }
     if (choise == 3) {
+        printf("use only latin symbol and don't use spaces\n");
         printf("Nickname of the second player(no more than 15 characters): ");
-        scanf("%s", player_name);
+        scanf("%s", string);
+        if (check_nick(string) == true) {
+            strcpy(player_name, string);
+            return 0;
+        } else
+            return nickname_out(player_name, 2);
     }
     printf("\n");
+    return 0;
 }
 
 int choise_dif()
