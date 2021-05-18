@@ -90,10 +90,13 @@ int nickname_out(char* player_name, int choise)
     printf("*|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||*\n");
     printf("*|||||||||||||||||||||ENTER YOUR NICKNAME|||||||||||||||||||*\n");
     printf("*|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||*\n");
+    printf("*|||||||||||||||||||||NAME INPUT RULES||||||||||||||||||||||*\n");
+    printf("*Use only latin symbol and don't use spaces. The indentation*\n");
+    printf("*is equivalent to the end of the name input.                *\n");
+    printf("*|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||*\n");
     printf("*************************************************************\n");
     char string[16];
     if (choise == 1) {
-        printf("use only latin symbol and don't use spaces\n");
         printf("Player's nickname(no more than 15 characters): ");
         scanf("%s", string);
         if (check_nick(string) == true) {
@@ -103,7 +106,6 @@ int nickname_out(char* player_name, int choise)
             return nickname_out(player_name, 1);
     }
     if (choise == 2) {
-        printf("use only latin symbol and don't use spaces\n");
         printf("Nickname of the first player(no more than 15 characters): ");
         scanf("%s", string);
         if (check_nick(string) == true) {
@@ -113,7 +115,6 @@ int nickname_out(char* player_name, int choise)
             return nickname_out(player_name, 2);
     }
     if (choise == 3) {
-        printf("use only latin symbol and don't use spaces\n");
         printf("Nickname of the second player(no more than 15 characters): ");
         scanf("%s", string);
         if (check_nick(string) == true) {

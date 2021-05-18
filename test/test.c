@@ -34,12 +34,12 @@ CTEST(input, input_in_menu_false)
         result = true;
     else
         result = false;
-    ASSERT_TRUE(result);
+    ASSERT_FALSE(result);
 }
 
 CTEST(input, input_name_false)
 {
     char out[16] = "Nai12";
     bool result = check_nick(out);
-    ASSERT_TRUE(result);
+    ASSERT_FALSE(result);
 }
