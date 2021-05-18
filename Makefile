@@ -1,6 +1,5 @@
 CC = gcc
 AR = ar rc
-RM = rm -Force
 FLAG_EXE = -lm -o
 O_FLAG_GAME = -Wall -Wextra -I src -I thirdparty -c -MP -MMD
 O_FLAG_TEST = -Wall -Wextra -I thirdparty -I src -c -MP -MMD
