@@ -43,3 +43,4 @@ CTEST(input, input_name_false)
     bool result = check_nick(out);
     ASSERT_FALSE(result);
 }
+// release

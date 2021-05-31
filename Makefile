@@ -57,3 +57,4 @@ clean:
 	$(RM) $(GAME_OBJ)*.o $(MAIN_OBJ)*.o $(MENU_OBJ)*.o $(TEST_OBJ)*.o
 	$(RM) $(GAME_OBJ)*.d $(MAIN_OBJ)*.d $(MENU_OBJ)*.d $(TEST_OBJ)*.d
 	$(RM) $(BIN)*.exe $(BIN)*.a
+//release

@@ -6,3 +6,4 @@
 
 int check_input(int, char*);
 bool check_nick(char*);
+// release

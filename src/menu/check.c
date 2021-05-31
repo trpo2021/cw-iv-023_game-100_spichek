@@ -56,3 +56,4 @@ bool check_nick(char* nick)
     }
     return true;
 }
+// release
